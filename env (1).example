@@ -1,0 +1,40 @@
+# ============================================================
+# CHRISTY CCM AGENT — Environment Variables
+# Copy this to .env.local for local development
+# Add ALL of these in Vercel → Project Settings → Environment Variables
+# NEVER commit real values to GitHub — .env.local is git-ignored
+# ============================================================
+
+# --- Supabase ---
+# Your project URL (same for all key types)
+SUPABASE_URL=https://xhwlkhpzruizvrdbopwo.supabase.co
+
+# NEW protocol — use these (Supabase dashboard → Settings → API)
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_xxxxxxxxxxxxxxxxxxxxxxxx
+SUPABASE_SECRET_KEY=your-secret-key-here
+
+# LEGACY fallbacks — Supabase still supports these during transition
+SUPABASE_ANON_KEY=your-legacy-anon-key-here
+SUPABASE_SERVICE_KEY=your-legacy-service-role-key-here
+
+# --- Anthropic (Haiku) ---
+# Same key already in Supabase — paste it here too
+# Vercel needs it because the cron and chat routes run on Vercel servers
+ANTHROPIC_API_KEY=your-anthropic-api-key-here
+
+# --- Chronic Care IQ ---
+# Verify base URL in your CCIQ account settings before deploying
+CCIQ_API_URL=https://app.chroniccareiq.com/api/v1
+CCIQ_API_KEY=your-cciq-api-key-here
+
+# --- Manager Notifications ---
+# Can be added after initial deploy
+NOTIFICATION_API_URL=https://your-notification-endpoint.com/alerts
+NOTIFICATION_API_KEY=your-notification-api-key-here
+
+# --- Vercel Cron Secret ---
+# DO NOT generate this yourself.
+# Vercel auto-creates it when you deploy with vercel.json in place.
+# After first deploy go to: Vercel → Project → Settings → Environment Variables
+# The CRON_SECRET will already be there — Vercel put it there automatically.
+CRON_SECRET=vercel-will-generate-this-automatically
